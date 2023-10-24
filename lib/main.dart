@@ -76,24 +76,7 @@ class App extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(45),
-                      color: const Color(0xFFF2B33A),
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 20,
-                        horizontal: 40,
-                      ),
-                      child: Text(
-                        'Transfer',
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                  ),
+                  const MyButton(),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(45),
@@ -116,6 +99,34 @@ class App extends StatelessWidget {
                 ],
               ),
             ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyButton extends StatelessWidget {
+  const MyButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(45),
+        color: const Color(0xFFF2B33A),
+      ),
+      child: const Padding(
+        padding: EdgeInsets.symmetric(
+          vertical: 20,
+          horizontal: 40,
+        ),
+        child: Text(
+          'Transfer',
+          style: TextStyle(
+            fontSize: 18,
           ),
         ),
       ),
