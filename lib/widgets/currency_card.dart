@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class CurrencyCard extends StatelessWidget {
   final String name, code, amount;
   final IconData icon;
-  final bool isInverted;
   final num order;
 
   final _blackColor = const Color(0xFF1F2123); // _ mean is private
@@ -16,7 +15,6 @@ class CurrencyCard extends StatelessWidget {
     required this.amount,
     required this.icon,
     required this.order,
-    this.isInverted = false,
   });
 
   @override
@@ -26,7 +24,7 @@ class CurrencyCard extends StatelessWidget {
       child: Container(
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
-          color: isInverted ? Colors.white : _blackColor,
+          color: order % 2 == 0 ? Colors.white : _blackColor,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
@@ -40,7 +38,7 @@ class CurrencyCard extends StatelessWidget {
                   Text(
                     name,
                     style: TextStyle(
-                        color: isInverted ? _blackColor : Colors.white,
+                        color: order % 2 == 0 ? _blackColor : Colors.white,
                         fontSize: 32,
                         fontWeight: FontWeight.w600),
                   ),
@@ -53,7 +51,7 @@ class CurrencyCard extends StatelessWidget {
                       Text(
                         amount,
                         style: TextStyle(
-                          color: isInverted ? _blackColor : Colors.white,
+                          color: order % 2 == 0 ? _blackColor : Colors.white,
                           fontSize: 20,
                         ),
                       ),
@@ -63,7 +61,7 @@ class CurrencyCard extends StatelessWidget {
                       Text(
                         code,
                         style: TextStyle(
-                          color: isInverted
+                          color: order % 2 == 0
                               ? _blackColor.withOpacity(0.8)
                               : Colors.white.withOpacity(0.8),
                           fontSize: 16,
@@ -79,7 +77,7 @@ class CurrencyCard extends StatelessWidget {
                   offset: const Offset(-5, 12),
                   child: Icon(
                     icon,
-                    color: isInverted ? _blackColor : Colors.white,
+                    color: order % 2 == 0 ? _blackColor : Colors.white,
                     size: 88,
                   ),
                 ),
