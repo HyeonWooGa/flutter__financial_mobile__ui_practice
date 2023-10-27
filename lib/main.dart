@@ -126,7 +126,7 @@ class App extends StatelessWidget {
                   order: 1,
                 ),
                 const CurrencyCard(
-                  name: "Bitconin",
+                  name: "Bitcoin",
                   code: "BTC",
                   amount: "9 785",
                   icon: Icons.currency_bitcoin_rounded,
